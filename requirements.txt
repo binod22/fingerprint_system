@@ -1,0 +1,5 @@
+opencv-contrib-python
+numpy
+psycopg2-binary
+scikit-image
+
