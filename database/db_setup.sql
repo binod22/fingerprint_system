@@ -1,5 +1,7 @@
-CREATE TABLE fingerprint_templates (
+CREATE TABLE person (
     id SERIAL PRIMARY KEY,
-    user_id INTEGER UNIQUE, 
-    template BYTEA NOT NULL 
+    name VARCHAR(255) NOT NULL,
+    code VARCHAR(50) UNIQUE NOT NULL,
+    fingerprint_template BYTEA
 );
+
