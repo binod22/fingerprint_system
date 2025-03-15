@@ -58,7 +58,7 @@ def store_template(conn, code, name, template):
         cursor.close()
 
 def verify_fingerprint(conn, image_path_verify):
-    matcher = FingerprintMatcher(threshold=5)  # Adjust threshold as needed
+    matcher = FingerprintMatcher(threshold=5)  
     templates_db = load_all_templates(conn)
     if not templates_db:
         print("No templates found in the database.")
@@ -102,7 +102,7 @@ def load_all_templates(conn):
         cursor.execute("SELECT code, fingerprint_template FROM person")
         results = cursor.fetchall()
         for result in results:
-            templates.append((result[0], result[1]))  # (code, template)
+            templates.append((result[0], result[1]))  
         print(f"{len(templates)} templates found in the database")
         return templates
     except (Exception, psycopg2.Error) as error:
